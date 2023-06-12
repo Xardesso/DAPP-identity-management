@@ -5,6 +5,8 @@ contract IdentityManagement {
     struct Identity {
         string name;
         string age;
+        string nationality;
+        uint256 height;
     }
 
     mapping(address => Identity) private identities;
@@ -19,9 +21,15 @@ contract IdentityManagement {
         _;
     }
 
-    function registerIdentity(string memory _name, string memory _age) public {
+    function registerIdentity(
+        string memory _name,
+        string memory _age,
+        string memory _nationality,
+        uint256 _height
+    ) public {
         require(bytes(_name).length > 0, "Invalid name");
         require(bytes(_age).length > 0, "Invalid age");
+        require(bytes(_nationality).length > 0, "Invalid nationality");
 
         Identity storage identity = identities[msg.sender];
         require(
@@ -31,6 +39,8 @@ contract IdentityManagement {
 
         identity.name = _name;
         identity.age = _age;
+        identity.nationality = _nationality;
+        identity.height = _height;
 
         emit IdentityRegistered(msg.sender);
     }
@@ -55,8 +65,18 @@ contract IdentityManagement {
 
     function getIdentity(
         address _user
-    ) public view onlyAuthorized returns (string memory, string memory) {
+    )
+        public
+        view
+        onlyAuthorized
+        returns (string memory, string memory, string memory, uint256)
+    {
         Identity memory identity = identities[_user];
-        return (identity.name, identity.age);
+        return (
+            identity.name,
+            identity.age,
+            identity.nationality,
+            identity.height
+        );
     }
 }
