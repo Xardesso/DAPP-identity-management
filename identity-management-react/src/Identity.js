@@ -11,11 +11,14 @@ function Identity() {
   useEffect(() => {
     const fetchIdentity = async () => {
       try {
-        const response = await axios.get("https://ETH_NODE_URL/getIdentity", {
-          params: {
-            user: "USER_ADDRESS", // Replace with the user's Ethereum address
-          },
-        });
+        const response = await axios.get(
+          "https://eth-sepolia.g.alchemy.com/v2/1r3b7NLZkd4VxE0Q42e83nX6OIZef3bY",
+          {
+            params: {
+              user: "USER_ADDRESS", // Replace with the user's Ethereum address
+            },
+          }
+        );
         const { name, age, nationality, height } = response.data;
         setName(name);
         setAge(age);

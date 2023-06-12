@@ -1,6 +1,18 @@
 require("@nomicfoundation/hardhat-toolbox");
 
-/** @type import('hardhat/config').HardhatUserConfig */
+require("dotenv").config();
+const { PRIVATE_KEY, API_KEY, PRIVATE_KEY2 } = process.env;
 module.exports = {
-  solidity: "0.8.18",
+  defaultNetwork: "sepolia",
+  paths: {
+    artifacts: "./identity-management-react/src/artifacts",
+    cache: "./identity-management-react/src/cache",
+  },
+  solidity: "0.8.0",
+  networks: {
+    sepolia: {
+      url: `https://eth-sepolia.g.alchemy.com/v2/${API_KEY}`,
+      accounts: [PRIVATE_KEY, PRIVATE_KEY2],
+    },
+  },
 };
