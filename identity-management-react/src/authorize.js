@@ -3,7 +3,7 @@ import "./style.css";
 export default function authorize({ signer }) {
   const [ad, setad] = useState();
 
-  async function register() {
+  async function authorize() {
     // Here you would call your smart contract function, using signer
   }
 
