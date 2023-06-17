@@ -6,8 +6,9 @@ export default function RegisterIdentity({ signer }) {
   const [nationality, setNationality] = useState();
   const [height, setHeight] = useState();
 
-  async function register() {}
-  window.location.href = "authorize.js";
+  async function register() {
+    window.location.href = "authorize.js";
+  }
 
   return (
     <div
