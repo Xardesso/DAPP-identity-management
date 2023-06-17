@@ -1,13 +1,11 @@
-const ethers = require("ethers");
-
 async function main() {
-  // Deploy Contract1
-  const Contract1Factory = await ethers.getContractFactory(
-    "IdentityManagement"
-  );
-  const contract1 = await Contract1Factory.deploy();
+  const [deployer] = await ethers.getSigners();
 
-  console.log("Contract1 main deployed to:", contract1.address);
+  console.log("Deploying contracts with the account:", deployer.address);
+
+  const identity = await ethers.deployContract("IdentityManagement");
+
+  console.log("Smart contract address:", await identity.getAddress());
 }
 
 main()
