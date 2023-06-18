@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import "./style.css";
-export default function authorize({ signer }) {
+export default function Authorize({ signer }) {
   const [ad, setad] = useState();
 
-  async function register() {
-    // Here you would call your smart contract function, using signer
+  async function a() {
+    console.log("aaaa");
   }
 
   return (
@@ -26,7 +26,7 @@ export default function authorize({ signer }) {
         <h1>Authorize</h1>
       </div>
       <form
-        onSubmit={authorize}
+        onSubmit={a}
         style={{
           textAlign: "center",
           width: "200px",
