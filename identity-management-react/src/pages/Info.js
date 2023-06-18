@@ -52,7 +52,7 @@ export default function Info({ signer }) {
         <input placeholder="address" disabled />
         <input placeholder="address" disabled />
         <input placeholder="address" disabled />
-        <button style={{ marginTop: "10px" }}>Revoke Authorize </button>
+        <button style={{ marginTop: "10px" }}>Revoke Authorization </button>
       </div>
 
       <footer style={{ textAlign: "center", marginBottom: "20px" }}>

@@ -9,7 +9,7 @@ export default function App() {
     <div>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Main />} />
+          <Route index element={<Main />} />
           <Route path="/authorize" element={<Authorize />} />
           <Route path="/info" element={<Info />} />
         </Routes>
