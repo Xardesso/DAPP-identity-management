@@ -1,45 +1,83 @@
 import React, { useState } from "react";
 import "./style.css";
-export default function Authorize({ signer }) {
+import { sp } from "../components/Wallet";
+import Wallet from "../components/Wallet";
+const { ethers } = require("ethers");
+import { Navigate, useNavigate } from "react-router-dom";
+
+export default function Authorize() {
+  const navigate = useNavigate();
+
   const [ad, setad] = useState();
+  let conadd = "0x3deBa8dB8489eA083719f83692eD7c323Df90278";
 
   async function a() {
-    console.log("aaaa");
-  }
+    const contractArtifacts = require("./artifacts/contracts/Identity.sol/IdentityManagement.json");
+    const contractABI = contractArtifacts.abi;
+    var x = sp();
+    var address = x[0];
+    var signer = x[1];
+    var provider = x[2];
+    console.log(address);
+    if (signer === undefined) {
+      window.alert("Connect wallet");
+    } else {
+      var addd = address.toString();
 
+      const contract = new ethers.Contract(conadd, contractABI, signer);
+
+      const values = {
+        gasLimit: 1000000,
+      };
+      const tx5 = await contract.showAuthorization(addd, values);
+      if (tx5 == true) {
+        window.alert("Identified user");
+      } else {
+        const tx2 = await contract.grantAuthorization(addd, values);
+
+        const receipt2 = await tx2.wait();
+
+        console.log(receipt2.status);
+
+        if (receipt2.status === 1) {
+          window.alert("Transaction successful!");
+          console.log("sucess");
+          navigate("/info");
+        }
+      }
+    }
+  }
   return (
-    <div
-      className="main"
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-      }}
-    >
+    <div className="main">
+      <div style={{ alignItems: "right", float: "right" }}>
+        <Wallet></Wallet>
+      </div>
       <div
         style={{
           height: "97px",
-          width: "1800pxpx",
-          textAlign: "center",
+          width: "1900px",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
         }}
       >
-        <h1>Authorize</h1>
+        <center>
+          <h1>Authorize</h1>
+        </center>
       </div>
       <form
-        onSubmit={a}
         style={{
           textAlign: "center",
-          width: "200px",
-          height: "495px",
+          width: "1590px",
+          height: "445px",
           margin: "150px",
         }}
       >
-        <input placeholder="address" onChange={(e) => setad(e.target.value)} />
-        <button type="submit" style={{ marginTop: "10px" }}>
+        <button type="button" onClick={a} style={{ marginTop: "10px" }}>
           Authorize
         </button>
       </form>
-      <footer style={{ textAlign: "center", marginBottom: "20px" }}>
+      <footer style={{ textAlign: "center", paddingBottom: "20px" }}>
         Marcin Letowski
       </footer>
     </div>

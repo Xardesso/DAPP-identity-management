@@ -2,12 +2,14 @@
 
 import React, { useState } from "react";
 import "./style.css";
-import { useNavigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 import Wallet from "../components/Wallet";
 import { sp } from "../components/Wallet";
 const { ethers } = require("ethers");
 export default function RegisterIdentity() {
-  let conadd = "0xCe9EB0c89aE559215F9811a78986594311437B5d";
+  const navigate = useNavigate();
+
+  let conadd = "0x3deBa8dB8489eA083719f83692eD7c323Df90278";
   const [name, setName] = useState();
   const [age, setAge] = useState();
   const [nationality, setNationality] = useState();
@@ -54,6 +56,7 @@ export default function RegisterIdentity() {
                 if (receipt.status === 1) {
                   window.alert("Transaction successful!");
                   console.log("sucess");
+                  navigate("/authorize");
                 }
               } catch (error) {
                 window.alert("Transaction Failed!");
@@ -88,7 +91,7 @@ export default function RegisterIdentity() {
           style={{
             textAlign: "center",
             width: "200px",
-            height: "540px",
+            height: "545px",
             margin: "100px",
           }}
         >
@@ -116,7 +119,7 @@ export default function RegisterIdentity() {
           </button>
         </form>
       </center>
-      <footer style={{ textAlign: "center", padding: "10px" }}>
+      <footer style={{ textAlign: "center", paddingBottom: "20px" }}>
         Marcin Letowski
       </footer>
     </div>

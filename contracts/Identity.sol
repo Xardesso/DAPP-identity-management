@@ -6,7 +6,7 @@ contract IdentityManagement {
         string name;
         string age;
         string nationality;
-        uint256 height;
+        string height;
     }
 
     mapping(address => Identity) private identities;
@@ -25,7 +25,7 @@ contract IdentityManagement {
         string memory _name,
         string memory _age,
         string memory _nationality,
-        uint256 _height
+        string memory _height
     ) public {
         require(bytes(_name).length > 0, "Invalid name");
         require(bytes(_age).length > 0, "Invalid age");
@@ -63,13 +63,19 @@ contract IdentityManagement {
         emit AuthorizationRevoked(msg.sender, _entity);
     }
 
+    function showAuthorization(address _entity) public view returns (bool) {
+        require(_entity != address(0), "Invalid entity address");
+
+        return (authorizedEntities[_entity]);
+    }
+
     function getIdentity(
         address _user
     )
         public
         view
         onlyAuthorized
-        returns (string memory, string memory, string memory, uint256)
+        returns (string memory, string memory, string memory, string memory)
     {
         Identity memory identity = identities[_user];
         return (
