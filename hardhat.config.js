@@ -1,6 +1,7 @@
 require("@nomicfoundation/hardhat-toolbox");
-
+require("@nomiclabs/hardhat-ethers");
 require("dotenv").config();
+
 const { PRIVATE_KEY, API_KEY, PRIVATE_KEY2 } = process.env;
 module.exports = {
   defaultNetwork: "sepolia",

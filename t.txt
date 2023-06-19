@@ -5,3 +5,8 @@ type="submit"
 body > iframe {
 	display: none;
   }
+   await expect(
+      identityManagement
+        .connect(owner.address)
+        .getIdentity(owner.address, values)
+    ).to.be.revertedWith("Unauthorized entity");

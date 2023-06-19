@@ -1,3 +1,5 @@
+const { ethers } = require("hardhat");
+
 async function main() {
   const [deployer] = await ethers.getSigners();
 
@@ -5,7 +7,7 @@ async function main() {
 
   const identity = await ethers.deployContract("IdentityManagement");
 
-  console.log("Smart contract address:", await identity.getAddress());
+  console.log("Smart contract address:", identity.address);
 }
 
 main()
