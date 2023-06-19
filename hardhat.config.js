@@ -5,8 +5,8 @@ const { PRIVATE_KEY, API_KEY, PRIVATE_KEY2 } = process.env;
 module.exports = {
   defaultNetwork: "sepolia",
   paths: {
-    artifacts: "./identity-management-react/src/artifacts",
-    cache: "./identity-management-react/src/cache",
+    artifacts: "./identity-management-react/src/pages/artifacts",
+    cache: "./identity-management-react/src/pages/cache",
   },
   solidity: "0.8.0",
   networks: {

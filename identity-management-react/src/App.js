@@ -1,59 +1,19 @@
-import React, { useState } from "react";
-import "./style.css";
-export default function RegisterIdentity({ signer }) {
-  const [name, setName] = useState();
-  const [age, setAge] = useState();
-  const [nationality, setNationality] = useState();
-  const [height, setHeight] = useState();
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Main from "./pages/Main";
+import Authorize from "./pages/Authorize";
+import Info from "./pages/Info";
 
-  async function register() {
-    window.location.href = "authorize.js";
-  }
-
+export default function App() {
   return (
-    <div
-      className="main"
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-      }}
-    >
-      <div
-        style={{
-          height: "97px",
-          width: "1800pxpx",
-          textAlign: "center",
-        }}
-      >
-        <h1>Identify Yourself</h1>
-      </div>
-      <form
-        onSubmit={register}
-        style={{
-          textAlign: "center",
-          width: "200px",
-          height: "495px",
-          margin: "150px",
-        }}
-      >
-        <input placeholder="Name" onChange={(e) => setName(e.target.value)} />
-        <input placeholder="Age" onChange={(e) => setAge(e.target.value)} />
-        <input
-          placeholder="Nationality"
-          onChange={(e) => setNationality(e.target.value)}
-        />
-        <input
-          placeholder="Height"
-          onChange={(e) => setHeight(e.target.value)}
-        />
-        <button type="submit" style={{ marginTop: "10px" }}>
-          Register
-        </button>
-      </form>
-      <footer style={{ textAlign: "center", marginBottom: "20px" }}>
-        Marcin Letowski
-      </footer>
+    <div>
+      <BrowserRouter>
+        <Routes>
+          <Route index element={<Main />} />
+          <Route path="/authorize" element={<Authorize />} />
+          <Route path="/info" element={<Info />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
