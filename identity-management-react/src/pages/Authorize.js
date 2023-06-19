@@ -1,9 +1,10 @@
+import { Navigate, useNavigate } from "react-router-dom";
+
 import React, { useState } from "react";
 import "./style.css";
 import { sp } from "../components/Wallet";
 import Wallet from "../components/Wallet";
 const { ethers } = require("ethers");
-import { Navigate, useNavigate } from "react-router-dom";
 
 export default function Authorize() {
   const navigate = useNavigate();

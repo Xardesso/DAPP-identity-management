@@ -14,14 +14,12 @@ describe("IdentityManagement", function () {
     oa = owner.address;
     aa = authorizedEntity.address;
     identity = await ethers.deployContract("IdentityManagement");
-    console.log(identity.address);
   });
 
   it("should register an identity", async function () {
     const values = {
       gasLimit: 1000000,
     };
-    console.log(oa);
     const name = "kal";
     const age = "20";
     const nationality = "poland";
@@ -48,7 +46,6 @@ describe("IdentityManagement", function () {
     const values2 = {
       gasLimit: 1000000,
     };
-    console.log(oa);
     const name = "kal";
     const age = "20";
     const nationality = "poland";

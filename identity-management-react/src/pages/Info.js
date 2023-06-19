@@ -1,9 +1,9 @@
+import { Navigate, useNavigate } from "react-router-dom";
 import React, { useState } from "react";
 import "./style.css";
 import { sp } from "../components/Wallet";
 import Wallet from "../components/Wallet";
 const { ethers } = require("ethers");
-import { Navigate, useNavigate } from "react-router-dom";
 
 let conadd = "0x3deBa8dB8489eA083719f83692eD7c323Df90278";
 
