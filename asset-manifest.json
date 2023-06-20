@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/DAPP-identity-management/static/css/main.68cf46fa.css",
-    "main.js": "/DAPP-identity-management/static/js/main.0b6fecf9.js",
+    "main.js": "/DAPP-identity-management/static/js/main.33b72206.js",
     "static/js/787.9db9ecc6.chunk.js": "/DAPP-identity-management/static/js/787.9db9ecc6.chunk.js",
     "static/media/background.png": "/DAPP-identity-management/static/media/background.6e336a5a94b30b1ba0dd.png",
     "index.html": "/DAPP-identity-management/index.html",
     "main.68cf46fa.css.map": "/DAPP-identity-management/static/css/main.68cf46fa.css.map",
-    "main.0b6fecf9.js.map": "/DAPP-identity-management/static/js/main.0b6fecf9.js.map",
+    "main.33b72206.js.map": "/DAPP-identity-management/static/js/main.33b72206.js.map",
     "787.9db9ecc6.chunk.js.map": "/DAPP-identity-management/static/js/787.9db9ecc6.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.68cf46fa.css",
-    "static/js/main.0b6fecf9.js"
+    "static/js/main.33b72206.js"
   ]
 }
