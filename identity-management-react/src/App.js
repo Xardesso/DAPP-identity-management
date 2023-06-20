@@ -7,7 +7,7 @@ import Info from "./pages/Info";
 export default function App() {
   return (
     <div>
-      <BrowserRouter>
+      <BrowserRouter basename="http://Xardesso.github.io/DAPP-identity-management">
         <Routes>
           <Route index element={<Main />} />
           <Route path="/authorize" element={<Authorize />} />
