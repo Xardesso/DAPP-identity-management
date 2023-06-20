@@ -1,5 +1,11 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  HashRouter,
+  Router,
+} from "react-router-dom";
 import Main from "./pages/Main";
 import Authorize from "./pages/Authorize";
 import Info from "./pages/Info";
@@ -7,13 +13,16 @@ import Info from "./pages/Info";
 export default function App() {
   return (
     <div>
-      <BrowserRouter>
+      <HashRouter>
         <Routes>
-          <Route index element={<Main />} />
-          <Route path="/authorize" element={<Authorize />} />
-          <Route path="/info" element={<Info />} />
+          <Route path="/DAPP-identity-management" element={<Main />} />
+          <Route
+            path="/DAPP-identity-management/authorize"
+            element={<Authorize />}
+          />
+          <Route path="/DAPP-identity-management/info" element={<Info />} />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </div>
   );
 }
