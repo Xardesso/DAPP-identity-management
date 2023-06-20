@@ -13,14 +13,16 @@ import Info from "./pages/Info";
 export default function App() {
   return (
     <div>
-      <Router>
-        <Route path="/DAPP-identity-management" element={<Main />} />
-        <Route
-          path="/DAPP-identity-management/authorize"
-          element={<Authorize />}
-        />
-        <Route path="/DAPP-identity-management/info" element={<Info />} />
-      </Router>
+      <HashRouter>
+        <Routes>
+          <Route path="/DAPP-identity-management" element={<Main />} />
+          <Route
+            path="/DAPP-identity-management/authorize"
+            element={<Authorize />}
+          />
+          <Route path="/DAPP-identity-management/info" element={<Info />} />
+        </Routes>
+      </HashRouter>
     </div>
   );
 }
