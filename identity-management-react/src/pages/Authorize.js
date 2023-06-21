@@ -10,7 +10,7 @@ export default function Authorize() {
   const navigate = useNavigate();
 
   const [ad, setad] = useState();
-  let conadd = "0x8e5D56257d9433974c41b9a1d7B43f0e792BCb85";
+  let conadd = "0x3898fFD5e7001Cade4Fd6118ae0CeF1F53875FbB";
 
   async function a() {
     const contractArtifacts = require("./artifacts/contracts/Identity.sol/IdentityManagement.json");

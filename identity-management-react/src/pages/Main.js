@@ -9,7 +9,7 @@ const { ethers } = require("ethers");
 export default function RegisterIdentity() {
   const navigate = useNavigate();
 
-  let conadd = "0x8e5D56257d9433974c41b9a1d7B43f0e792BCb85";
+  let conadd = "0x3898fFD5e7001Cade4Fd6118ae0CeF1F53875FbB";
   const [name, setName] = useState();
   const [age, setAge] = useState();
   const [nationality, setNationality] = useState();

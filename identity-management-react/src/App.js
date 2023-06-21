@@ -15,12 +15,9 @@ export default function App() {
     <div>
       <HashRouter>
         <Routes>
-          <Route path="/DAPP-identity-management" element={<Main />} />
-          <Route
-            path="/DAPP-identity-management/authorize"
-            element={<Authorize />}
-          />
-          <Route path="/DAPP-identity-management/info" element={<Info />} />
+          <Route index element={<Main />} />
+          <Route path="/authorize" element={<Authorize />} />
+          <Route path="/info" element={<Info />} />
         </Routes>
       </HashRouter>
     </div>
